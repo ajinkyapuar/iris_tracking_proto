@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">media_pipe_proto</string>
+    <string name="no_camera_access">카메라 권한이 허용되지 않았습니다.</string>
+</resources>
