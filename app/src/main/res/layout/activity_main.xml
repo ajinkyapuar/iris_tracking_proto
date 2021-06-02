@@ -7,14 +7,45 @@
 
     <FrameLayout
         android:id="@+id/preview_display_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/distance_display_layout">
         <TextView
             android:id="@+id/no_camera_access_view"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:gravity="center"
             android:text="@string/no_camera_access" />
     </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/distance_display_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/preview_display_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_weight="1"
+        >
+        <TextView
+            android:id="@+id/tvLeftEye"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvRightEye"
+            />
+        <TextView
+            android:id="@+id/tvRightEye"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/tvLeftEye"
+            app:layout_constraintStart_toEndOf="@id/tvLeftEye"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
